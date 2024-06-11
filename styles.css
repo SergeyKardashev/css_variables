@@ -1,0 +1,21 @@
+
+/* declare css variable in main scope (in html-tag) */
+:root {
+    --main-color: violet;
+}
+
+title {
+    color: var(--main-color, purple);
+    /* var(value, fallback_value); */
+}
+
+.local-stuff {
+/* declare css variable in local scope (for the element and its children) */
+    --success-color: green;
+}
+
+.local-stuff p {
+    /* use local variable for child */
+    color: var(--success-color);
+    border: 3px solid var(--success-color);
+}
