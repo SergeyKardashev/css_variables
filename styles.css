@@ -1,10 +1,9 @@
-
 /* declare css variable in main scope (in html-tag) */
 :root {
     --main-color: violet;
 }
 
-title {
+.title {
     color: var(--main-color, purple);
     /* var(value, fallback_value); */
 }
