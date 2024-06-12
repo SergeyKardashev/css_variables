@@ -1,31 +1,50 @@
 /* declare css variable in main scope (in html-tag) */
 :root {
-    --main-color: hotpink;
+  --main-color: hotpink;
+  --main-font-size: 8px;
+}
+
+@media all and (min-width: 300px) {
+  :root {
+    --main-font-size: 12px;
+  }
+}
+
+@media all and (min-width: 400px) {
+  :root {
+    --main-font-size: 20px;
+  }
+}
+
+@media all and (min-width: 600px) {
+  :root {
+    --main-font-size: 30px;
+  }
 }
 
 body {
-    background: gray;
-    font-size: 30px;
-    width: 500px;
+  background: gray;
+  font-size: var(--main-font-size);
+  /* width: 500px; */
 }
 
 .title {
-    color: var(--main-color,  lightcoral);
-    /* var(value, fallback_value); */
+  color: var(--main-color, lightcoral);
+  /* var(value, fallback_value); */
 }
 
 .local-stuff {
-/* declare css variable in local scope (for the element and its children) */
-    --success-color: lightgreen;
-    font-size: 40px;
+  /* declare css variable in local scope (for the element and its children) */
+  --success-color: lightgreen;
+  font-size: 40px;
 }
 
 .local-stuff p {
-    /* use local variable for child */
-    color: var(--success-color);
-    border: 3px solid var(--success-color);
+  /* use local variable for child */
+  color: var(--success-color);
+  border: 3px solid var(--success-color);
 }
 
 .button {
-    font-size: 30px;
+  font-size: 30px;
 }
