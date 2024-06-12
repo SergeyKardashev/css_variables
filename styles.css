@@ -1,20 +1,31 @@
 /* declare css variable in main scope (in html-tag) */
 :root {
-    --main-color: violet;
+    --main-color: hotpink;
+}
+
+body {
+    background: gray;
+    font-size: 30px;
+    width: 500px;
 }
 
 .title {
-    color: var(--main-color, purple);
+    color: var(--main-color,  lightcoral);
     /* var(value, fallback_value); */
 }
 
 .local-stuff {
 /* declare css variable in local scope (for the element and its children) */
-    --success-color: green;
+    --success-color: lightgreen;
+    font-size: 40px;
 }
 
 .local-stuff p {
     /* use local variable for child */
     color: var(--success-color);
     border: 3px solid var(--success-color);
+}
+
+.button {
+    font-size: 30px;
 }
